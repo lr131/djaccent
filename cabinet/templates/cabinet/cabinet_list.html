@@ -1,0 +1,35 @@
+{% extends 'main/base.html' %}
+{% block title %}Управление кабинетами{% endblock %}
+{% block head %}
+  Список кабинетов
+{% endblock %}
+  {% block content %}
+    <div class="row form-group">
+    <div class=" col-sm-12">
+      <div class="box">
+      <table id="example2" class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th> Название кабинета</th>
+            <th> Адрес </th>
+            <th> Общее расписание </th>
+            <!-- <th></th>
+            <th></th> -->
+          </tr>
+        </thead>
+        <tbody>
+          {% for cab in cabs %}
+          <tr>
+            <td> {{cab.title}} </td>
+            <td> {{cab.addr}}</td>
+            <td> Расписание </td>
+            <!-- <td> <a href="#" > <span class="glyphicon glyphicon-edit text-muted"></span> </a></td>
+            <td><a href="#" >  <span class="glyphicon glyphicon-remove text-danger"></span> </a></td> -->
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div><!-- /.box -->
+  </div>
+  {% endblock content %}

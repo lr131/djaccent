@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+{% block title %}Управление курсами{% endblock %}
+{% block head %}
+  Список курсов
+{% endblock %}
+  {% block content %}
+    <div class="row form-group">
+    <div class=" col-sm-12">
+      <div class="box">
+      <table id="example2" class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th> Название дисциплины</th>
+            <th>Стоимость инд, руб</th>
+            <th>Стоимость группа, руб</th>
+            <th>Количество занятий</th>
+            <!-- <th></th>
+            <th></th> -->
+          </tr>
+        </thead>
+        <tbody>
+          {% for course in courses %}
+          <tr>
+            <td> {{course.title}} </td>
+            <td> {{course.ind}}</td>
+            <td> {{course.gr}}</td>
+            <td> {{course.clessons}}</td>
+            <!-- <td> <a href="#" > <span class="glyphicon glyphicon-edit text-muted"></span> </a></td>
+            <td><a href="#" >  <span class="glyphicon glyphicon-remove text-danger"></span> </a></td> -->
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div><!-- /.box -->
+  </div>
+  {% endblock content %}

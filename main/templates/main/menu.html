@@ -1,0 +1,28 @@
+<ul class="sidebar-menu">
+	<li class="header">Основные операции</li>
+	<li {% if active == 'cab' %} class="active"{% endif %}>
+	  <a href="{% url 'cabinet_list' %}">
+	    <i class="glyphicon glyphicon-home"></i> <span>Кабинеты</span> 
+	  </a>
+	</li>
+	<li {% if active == 'teach' %} class="active"{% endif %}>
+	  <a href="{% url 'teacher_list' %}">
+	    <i class="glyphicon glyphicon-fire"></i> <span>Преподаватели</span> 
+	  </a>
+	</li>
+	<li {% if active == 'course' %} class="active" {% endif %}>
+	  <a href="{% url 'course_list' %}">
+	    <i class="glyphicon glyphicon-tasks"></i> <span>Курсы</span>
+	  </a>
+	</li>
+	<li {% if active == 'stud' %} class="active"{% endif %}>
+	  <a href="#">
+	    <i class="glyphicon glyphicon-education"></i> <span>Студенты</span> 
+	  </a>
+	</li>
+	<li {% if active == 'group' %} class="active"{% endif %}>
+	  <a href="#">
+	    <i class="glyphicon glyphicon-stats"></i> <span>Группы</span> 
+	  </a>
+	</li>
+</ul>

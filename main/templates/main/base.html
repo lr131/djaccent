@@ -1,0 +1,107 @@
+{% load staticfiles %}
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="accent is module">
+      <meta name="author" content="lr131">
+      <title>{% block title %}Главная страница{% endblock %} | Школа Рока Акцент</title>
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="{% static 'css/AdminLTE.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/blue.css' %}">
+      <link rel="stylesheet" href="{% static 'css/skin-blue.min.css' %}">
+      <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="/" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b><img src="{% static 'images/logo.png' %}" alt="ARS" width="60%"></b></span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b><img src="{% static 'images/logo.png' %}" alt="ARS" width="20%"> <img src="{% static 'images/school.png' %}" alt="ARS" width="40%"> </b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <!--<span class="glyphicon glyphicon-menu-hamburger"></span> -->
+          </a>
+          <!-- Sidebar toggle button-->
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+                <li class="dropdown user user-menu">
+                  {% if user.is_authenticated %}
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="hidden-xs">{{user.first_name}} {{user.last_name}} </span> <span class="caret"> </span> </a>
+                  <ul class="dropdown-menu logout">
+                    <li class="user-body"><a href="#"><p> Выйти из системы </p> </a></li>
+                  </ul>
+                  {% else %}
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="hidden-xs">Не авторизован </span> <span class="caret"></span> </a>
+                  {% endif %}
+                </li>
+              <li></li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+    <aside class="main-sidebar">
+      <section class="sidebar">
+        {% block menu %}
+          {% include 'main/menu.html' %}
+        {% endblock %}
+      </section>
+    </aside>
+    <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+        {% block head %}
+        Модуль "Расписание" информационной системы "Школа Рока Акцент" 
+        {% endblock %}</h1>
+      </section>
+      <!-- Main content -->
+      <section class="content">
+        <!-- Main row -->
+        <div class="row">
+        <section class="col-lg-12 col-sm-12 connectedSortable">
+      {% block content %}
+      Ведутся технические работы. Пожалуйста, зайдите позже.
+      {% endblock %}
+      </section><!-- left col -->
+        </div><!-- /.row (main row) -->
+      </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+    <footer class="main-footer">
+      По всем вопросам обращаться к Кристине (телефон 8-983-463-11-06). 
+    </footer>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+    <!-- Create the tabs -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+    <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+    <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    </aside><!-- /.control-sidebar -->
+
+  </div><!-- ./wrapper -->
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+  <script type="text/javascript" src="{% static 'js/lib/moment.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/lib/app.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/lib/bootstrap-datetimepicker.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/lib/daterangepicker.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/lib/fastclick.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/lib/icheck.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/lib/jquery-ui.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/lib/jquery.maskedinput.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/lib/jstmpl.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/lib/select2.full.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/lib/select2.min.js' %}"></script>
+
+  </body>
+</html>
