@@ -1,0 +1,54 @@
+{% extends 'main/base.html' %}
+{% block title %}Управление кабинетами{% endblock %}
+{% block head %}
+  Общее расписание кабинетов
+{% endblock %}
+  {% block content %}
+    <div>
+  <!-- Навигация -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li><a href="#Mon" aria-controls="Mon" role="tab" data-toggle="tab">Понедельник</a></li>
+    <li><a href="#Tue" aria-controls="Tue" role="tab" data-toggle="tab">Вторник</a></li>
+    <li><a href="#Wed" aria-controls="Wed" role="tab" data-toggle="tab">Среда</a></li>
+    <li><a href="#Thu" aria-controls="Thu" role="tab" data-toggle="tab">Четверг</a></li>
+    <li><a href="#Fri" aria-controls="Fri" role="tab" data-toggle="tab">Пятница</a></li>
+    <li><a href="#Sat" aria-controls="Sat" role="tab" data-toggle="tab">Суббота</a></li>
+    <li><a href="#Sun" aria-controls="Sun" role="tab" data-toggle="tab">Воскресенье</a></li>
+  </ul>
+  <!-- Содержимое вкладок -->
+  <div class="tab-content">
+  {% for day in weekline %}
+    <div role="tabpanel" class="tab-pane" id="{{day}}">
+      <div class="row form-group">
+        <div class=" col-sm-12">
+          <div class="box">
+            <table id="example2" class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th>Время</th>
+                  <!-- {% for cab in cabs %} -->
+                  <th> Кабинет </th>
+                  <!-- {% endfor %} -->
+                  <th>Время</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for block in timelist %}
+                <tr>
+                  <td name='time'> {{block}} </td>
+                  {% for cab in cabinets %}
+                      <td name='rec'> <a href="#"> Свободно </a></td> 
+                  {% endfor %}
+                  <td>{{block}}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div><!-- /.box -->
+        </div>
+      </div>
+    </div>
+{% endfor %}
+  </div>
+</div>
+  {% endblock content %}
