@@ -16,12 +16,12 @@
 	  </a>
 	</li>
 	<li {% if active == 'stud' %} class="active"{% endif %}>
-	  <a href="#">
+	  <a href="{% url 'student_list' %}">
 	    <i class="glyphicon glyphicon-education"></i> <span>Студенты</span> 
 	  </a>
 	</li>
 	<li {% if active == 'group' %} class="active"{% endif %}>
-	  <a href="#">
+	  <a href="{% url 'group_list' %}">
 	    <i class="glyphicon glyphicon-stats"></i> <span>Группы</span> 
 	  </a>
 	</li>

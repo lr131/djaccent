@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% block title %}Управление группами {% endblock %}
+{% block head %}
+  Список групп
+{% endblock %}
+  {% block content %}
+    <div class="row form-group">
+    <div class=" col-sm-12">
+      <div class="box">
+      <table id="example2" class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th> Группа</th>
+            <th> Преподаватель </th>
+            <th> Курс </th>
+            <!-- <th> Студенты </th> -->
+            <!-- <th></th> -->
+          </tr>
+        </thead>
+        <tbody>
+          {% for group in groups %}
+          <tr>
+            <td> {{group.title}} </td>
+            <td> {{group.teacher.last_name}} {{group.teacher.first_name}}</td>
+            <td> {{group.course}} </td>
+            <!-- <td> {{group.student}} </td> -->
+            <!-- <td> <a href="#" > <span class="glyphicon glyphicon-edit text-muted"></span> </a></td>
+            <td><a href="#" >  <span class="glyphicon glyphicon-remove text-danger"></span> </a></td> -->
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div><!-- /.box -->
+  </div>
+  <!-- <div class="row form-group"> 
+    <div class="col-sm-12">
+      <a href="#" type="button" class="btn btn-primary"> Добавить группу </a>
+    </div>
+  </div> -->
+  {% endblock content %}

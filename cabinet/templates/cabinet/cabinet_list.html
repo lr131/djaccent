@@ -22,7 +22,7 @@
           <tr>
             <td> {{cab.title}} </td>
             <td> {{cab.addr}}</td>
-            <td> Расписание </td>
+            <td> {% if user.is_authenticated %} Расписание {% else %} Не авторизован {% endif %} </td>
             <!-- <td> <a href="#" > <span class="glyphicon glyphicon-edit text-muted"></span> </a></td>
             <td><a href="#" >  <span class="glyphicon glyphicon-remove text-danger"></span> </a></td> -->
           </tr>

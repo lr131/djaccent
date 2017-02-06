@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
-{% block title %}Управление расписанием {% endblock %}
+{% block title %}Управление студентами {% endblock %}
 {% block head %}
-  Список преподавателей
+  Список студентов
 {% endblock %}
   {% block content %}
     <div class="row form-group">
@@ -12,16 +12,16 @@
           <tr>
             <th> Фамилия</th>
             <th> Имя </th>
-            <th> Общее расписание </th>
+            <th>  </th>
             <!-- <th></th>
             <th></th> -->
           </tr>
         </thead>
         <tbody>
-          {% for teacher in teachers %}
+          {% for student in students %}
           <tr>
-            <td> {{teacher.last_name}} </td>
-            <td> {{teacher.first_name}}</td>
+            <td> {{student.last_name}} </td>
+            <td> {{student.first_name}}</td>
             <td> {% if user.is_authenticated %} Расписание {% else %} Не авторизован {% endif %} </td>
             <!-- <td> <a href="#" > <span class="glyphicon glyphicon-edit text-muted"></span> </a></td>
             <td><a href="#" >  <span class="glyphicon glyphicon-remove text-danger"></span> </a></td> -->
